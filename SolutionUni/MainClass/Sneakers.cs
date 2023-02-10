@@ -1,10 +1,9 @@
 ﻿using System.ComponentModel;
 
-namespace SolutionUni.Folder_1
+namespace SolutionUni.MainClass
 {
     public abstract class Sneakers
     {
-
         public abstract void Add();
         public abstract void Remove();
         public abstract void AddToExisting();

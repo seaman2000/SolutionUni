@@ -1,22 +1,15 @@
-﻿using SolutionUni.Folder_1;
-using SolutionUni.Folder_2;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
+﻿using SolutionUni.MainClass;
 
 namespace SolutionUni.Folder_1.AdidasSport
 {
-    public class SSservice : Sneakers
+    public class AdidasService : Sneakers
     {
-        private readonly List<Sneakers> Sneakers;
+        private readonly List<AdidasSport> Sneakers;
 
 
-        public SSservice()
+        public AdidasService()
         {
-            Sneakers = new List<Sneakers>();
+            Sneakers = new List<AdidasSport>();
         }
 
         public override void Add()
@@ -32,7 +25,7 @@ namespace SolutionUni.Folder_1.AdidasSport
 
             Sneakers.Add(snk);
 
-            foreach (var item in AdidasSport)
+            foreach (var item in Sneakers)
             {
                 Console.WriteLine($"Name: {item.Name}");
                 Console.WriteLine($"Price:{item.Price}");
@@ -47,7 +40,7 @@ namespace SolutionUni.Folder_1.AdidasSport
             int numberToRemove = int.Parse(Console.ReadLine());
             try
             {
-                var ifExist = AdidasSport.Find(f => f.Name == snkToRemove && f.Quantity >= numberToRemove);
+                var ifExist = Sneakers.Find(f => f.Name == snkToRemove && f.Quantity >= numberToRemove);
                 var removed = ifExist.Quantity - numberToRemove;
                 if (removed >= 0)
                 {
@@ -68,7 +61,7 @@ namespace SolutionUni.Folder_1.AdidasSport
             string name = Console.ReadLine();
             try
             {
-                var ifExist = AdidasSport.First(f => f.Name == name);
+                var ifExist = Sneakers.First(f => f.Name == name);
                 Console.WriteLine("Enter Quantity of the sneakers");
                 int quantityToAdd = int.Parse(Console.ReadLine());
                 var newQuantity = ifExist.Quantity + quantityToAdd;

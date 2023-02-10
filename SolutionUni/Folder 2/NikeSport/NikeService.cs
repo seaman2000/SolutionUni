@@ -1,39 +1,31 @@
-﻿
-using SolutionUni.Folder_1;
-using SolutionUni.Folder_2;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using SolutionUni.MainClass;
 
 namespace SolutionUni.Folder_2.NikeSport
 {
-    public class Vservice : Sneakers
+    public class NikeService : Sneakers
     {
-        private readonly List<Sneakers> sneakers;
+        private readonly List<NikeSport> sneakers;
 
-
-        public Vservice()
+        public NikeService()
         {
-            sneakers = new List<Sneakers>();
+            sneakers = new List<NikeSport>();
         }
 
         public override void Add()
         {
-            var snk = new NikeSport();
+            var nikeSnk = new NikeSport();
 
             Console.WriteLine("Enter name of the sneakers");
-            snk.Name = Console.ReadLine();
+            nikeSnk.Name = Console.ReadLine();
             Console.WriteLine("Enter price of the sneakers");
-            snk.Price = int.Parse(Console.ReadLine());
+            nikeSnk.Price = int.Parse(Console.ReadLine());
             Console.WriteLine("Enter Quantity of the Ssneakers");
-            snk.Quantity = int.Parse(Console.ReadLine());
+            nikeSnk.Quantity = int.Parse(Console.ReadLine());
 
-            sneakers.Add(snk);;
+            sneakers.Add(nikeSnk);
+            
 
-            foreach (var item in NikeSport)
+            foreach (var item in sneakers)
             {
                 Console.WriteLine($"Name: {item.Name}");
                 Console.WriteLine($"Price:{item.Price}");
@@ -42,13 +34,13 @@ namespace SolutionUni.Folder_2.NikeSport
         }
         public override void Remove()
         {
-            Console.WriteLine("Enter the name of the vitamin you want to remove");
+            Console.WriteLine("Enter the name of the sneakers you want to remove");
             string snkToRemove = Console.ReadLine();
-            Console.WriteLine("Enter the number of the vitamins you want to remove");
+            Console.WriteLine("Enter the number of the sneakers you want to remove");
             int numberToRemove = int.Parse(Console.ReadLine());
             try
             {
-                var ifExist = NikeSport.Find(f => f.Name == snkToRemove && f.Quantity >= numberToRemove);
+                var ifExist = sneakers.Find(f => f.Name == snkToRemove && f.Quantity >= numberToRemove);
                 var removed = ifExist.Quantity - numberToRemove;
                 if (removed >= 0)
                 {
@@ -69,7 +61,7 @@ namespace SolutionUni.Folder_2.NikeSport
             string name = Console.ReadLine();
             try
             {
-                var ifExist = NikeSport.First(f => f.Name == name);
+                var ifExist = sneakers.First(f => f.Name == name);
                 Console.WriteLine("Enter Quantity of the sneakers");
                 int quantityToAdd = int.Parse(Console.ReadLine());
                 var newQuantity = ifExist.Quantity + quantityToAdd;

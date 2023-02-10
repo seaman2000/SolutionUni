@@ -4,8 +4,8 @@
     {
         static void Main(string[] args)
         {
-            var NikeSport = new Folder_1.AdidasSport.SSservice();
-            var AdidasSport = new Folder_2.NikeSport.Vservice();
+            var NikeSport = new Folder_1.AdidasSport.AdidasService();
+            var AdidasSport = new Folder_2.NikeSport.NikeService();
 
             Console.WriteLine("Choose an option below:");
             Console.WriteLine("1. Add New Sneakers");
@@ -16,7 +16,7 @@
 
             Console.WriteLine("Enter:");
             string option = Console.ReadLine();
-            while (option != "3")
+            while (option != "4")
             {
                 switch (option)
                 {
@@ -60,8 +60,8 @@
                         {
                             NikeSport.AddToExisting();
                         }
-
                         break;
+                }
 
                 Console.WriteLine("Select option");
                 Console.WriteLine("1. Add New Sneakers");
@@ -70,8 +70,6 @@
                 Console.WriteLine("4. Exit");
                 option = Console.ReadLine();
             }
-
         }
     }
-}
 }

@@ -1,6 +1,6 @@
 ﻿using System.Transactions;
 
-namespace SolutionUni.Folder_1
+namespace SolutionUni.Folder_1.AdidasSport
 {
     public class AdidasSport
     {
